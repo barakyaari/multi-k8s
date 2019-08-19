@@ -12,6 +12,6 @@ docker push barakyaari/multi-server:$SHA
 docker push barakyaari/multi-worker:$SHA
 
 kubectl apply -f k8s
+kubectl set image deployments/client-deployment client=barakyaari/multi-client:$SHA
 kubectl set image deployments/server-deployment server=barakyaari/multi-server:$SHA
-kubectl set image deployments/client-deployment server=barakyaari/multi-client:$SHA
-kubectl set image deployments/worker-deployment server=barakyaari/multi-worker:$SHA
+kubectl set image deployments/worker-deployment worker=barakyaari/multi-worker:$SHA
